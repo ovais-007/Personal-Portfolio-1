@@ -12,14 +12,15 @@
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
         }
 
         body {
             background-color: rgb(0, 0, 33);
             color: white;
             font-family: 'poppins', sans-serif;
-
-
+            overflow-x: hidden;
         }
 
         nav {
@@ -28,6 +29,10 @@
             align-items: center;
             height: 80px;
             background-color: rgb(18, 18, 62);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         nav ul {
@@ -81,13 +86,19 @@
             border-radius: 6px;
             font-size: 20px;
             cursor: pointer;
+            transition: all 0.3s ease;
+        }
 
+        .leftsection .btn:hover {
+            background: #2a2e8a;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .rightsection img {
             width: 80%;
-
-
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(169, 107, 226, 0.3);
         }
 
         .purple {
@@ -101,6 +112,108 @@
         .secondsection {
             max-width: 80vw;
             margin: auto;
+            padding: 40px 0;
+        }
+
+        .secondsection h1 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .skill-card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+            object-fit: contain;
+        }
+
+        .skill-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .project-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .project-card p {
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .project-links a {
+            padding: 8px 15px;
+            background: #1e2167;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .project-links a:hover {
+            background: #2a2e8a;
+            transform: translateY(-2px);
         }
 
         main hr {
@@ -110,18 +223,13 @@
             margin: 60px 84px;
         }
 
-        .secondsection {
-            font-size: 1.5rem;
-            height: 40vh;
-        }
-
         .text-grey {
             color: grey;
         }
 
         .secondsection .box {
             background: white;
-            width: 76vw;
+            width: 100%;
             height: 2px;
             margin: 56px 0;
             display: flex;
@@ -169,23 +277,34 @@
         .footer {
             display: flex;
             padding: 23px 122px;
+            justify-content: space-between;
+            width: 100%;
+        }
 
+        .footer-first {
+            width: 30%;
         }
-        .footer .footerfirst .footersecond{
-            text-align: center;
-        }
-        .footer .footersecond{
-            text-align: center;
+
+        .footer-second {
+            width: 30%;
         }
 
         .footer ul {
             list-style: none;
+            padding: 0;
         }
 
-        .footer{
-            width : 450px ;
-            display: flex;
-            flex-direction:column-reverse;
+        .footer ul li {
+            margin: 10px 0;
+        }
+
+        .footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer ul li a:hover {
+            color: lavender;
         }
 
         footer .text-right {
@@ -197,6 +316,256 @@
         .leftsection .buttons {
             padding: 50px 0;
         }
+
+        /* Enhanced Responsive Design */
+        @media screen and (max-width: 1200px) {
+            .firstsection {
+                flex-direction: column;
+                margin: 100px 0;
+                padding: 0 20px;
+            }
+
+            .firstsection > div {
+                width: 80%;
+                margin: 20px 0;
+            }
+
+            .leftsection {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .rightsection img {
+                width: 60%;
+                display: block;
+                margin: 0 auto;
+                max-width: 400px;
+            }
+
+            .secondsection {
+                height: auto;
+                padding: 20px;
+            }
+
+            .box {
+                flex-direction: column;
+                height: auto;
+                align-items: center;
+            }
+
+            .vertical {
+                height: auto;
+                margin: 30px 0;
+                padding: 20px;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 10px;
+                width: 80%;
+                max-width: 300px;
+            }
+
+            .image-top {
+                top: -30px;
+                width: 40px;
+                height: 40px;
+            }
+
+            .vertical-title {
+                top: 0;
+                margin: 0;
+                font-size: 1.2rem;
+            }
+
+            .vertical-desc {
+                top: 0;
+                margin-top: 10px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                height: auto;
+                padding: 20px 0;
+                position: relative;
+            }
+
+            .left {
+                margin-bottom: 20px;
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 10px;
+                transition: all 0.3s ease;
+            }
+
+            nav ul li a:hover {
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 5px;
+            }
+
+            .firstsection > div {
+                width: 90%;
+            }
+
+            .leftsection {
+                font-size: 1.5rem;
+            }
+
+            .buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .btn {
+                margin: 10px 0;
+                width: 200px;
+                padding: 15px;
+            }
+
+            .footer {
+                flex-direction: column;
+                padding: 20px;
+                text-align: center;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 10px;
+                margin: 20px;
+            }
+
+            .footer-first, .footer-second {
+                width: 100%;
+                margin: 20px 0;
+            }
+
+            .footer ul li {
+                margin: 15px 0;
+            }
+
+            .footer ul li a {
+                padding: 10px;
+                display: inline-block;
+                transition: all 0.3s ease;
+            }
+
+            .footer ul li a:hover {
+                transform: translateX(5px);
+            }
+
+            .skills-container, .projects-container {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+            }
+
+            .skill-card {
+                padding: 20px;
+            }
+
+            .skill-card img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .project-card {
+                padding: 20px;
+            }
+
+            .project-card img {
+                height: 150px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .leftsection {
+                font-size: 1.2rem;
+            }
+
+            .secondsection h1 {
+                font-size: 1.5rem;
+            }
+
+            .vertical {
+                width: 90%;
+                padding: 15px;
+            }
+
+            .vertical-title {
+                font-size: 1rem;
+            }
+
+            .vertical-desc {
+                font-size: 0.8rem;
+            }
+
+            .text-grey {
+                text-align: center;
+                display: block;
+                margin-bottom: 20px;
+            }
+
+            .rightsection img {
+                width: 90%;
+            }
+
+            .skills-container, .projects-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-card h3 {
+                font-size: 1rem;
+            }
+
+            .project-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .project-links {
+                flex-direction: column;
+            }
+
+            .project-links a {
+                text-align: center;
+            }
+        }
+
+        /* Animation for skills section */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .vertical {
+            animation: fadeIn 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .vertical:nth-child(1) { animation-delay: 0.1s; }
+        .vertical:nth-child(2) { animation-delay: 0.2s; }
+        .vertical:nth-child(3) { animation-delay: 0.3s; }
+        .vertical:nth-child(4) { animation-delay: 0.4s; }
+        .vertical:nth-child(5) { animation-delay: 0.5s; }
+        .vertical:nth-child(6) { animation-delay: 0.6s; }
     </style>
 </head>
 
@@ -223,9 +592,8 @@
                 <div>and i am a passonate</div>
                 <span id="element"></span>
                 <div class="buttons">
-                    <button class="btn">download resume</button>
-                    <button class="btn">visit github</button>
-
+                    <button class="btn" onclick="window.open('https://drive.google.com/file/d/1MW3-6aZrFarw-A4xhR-OepXMP0flgWaE/view?usp=sharing', '_blank')">download resume</button>
+                    <button class="btn" onclick="window.open('https://github.com/ovais-007', '_blank')">visit github</button>
                 </div>
 
             </div>
@@ -238,112 +606,84 @@
             <span class="text-grey">what i have done so far</span>
             <h1>TECHNICAL SKILLS</h1>
 
-            <div class="box">
-                <div class="vertical">
-                    <img class="image-top" src="c++.png" alt="">
-                    <div class="vertical-title">
-                        C++
-                    </div>
-
+            <div class="skills-container">
+                <div class="skill-card">
+                    <img src="c++.png" alt="C++">
+                    <h3>C++</h3>
                 </div>
-                <div class="vertical">
-                    <img class="image-top" src="c.png" alt="">
-                    <div class="vertical-title">
-                        C
-                    </div>
-
+                <div class="skill-card">
+                    <img src="c.png" alt="C">
+                    <h3>C</h3>
                 </div>
-                <div class="vertical">
-                    <img class="image-top" src="py.png" alt="">
-                    <div class="vertical-title">
-                        PHYTHON
-                    </div>
-
+                <div class="skill-card">
+                    <img src="py.png" alt="Python">
+                    <h3>Python</h3>
                 </div>
-                <div class="vertical">
-                    <img class="image-top" src="html.png" alt="">
-                    <div class="vertical-title">
-                        HTML
-                    </div>
-
+                <div class="skill-card">
+                    <img src="html.png" alt="HTML">
+                    <h3>HTML</h3>
                 </div>
-                <div class="vertical">
-                    <img class="image-top" src="css.png" alt="">
-                    <div class="vertical-title">
-                        CSS
-                    </div>
-
+                <div class="skill-card">
+                    <img src="css.png" alt="CSS">
+                    <h3>CSS</h3>
                 </div>
-                <div class="vertical">
-                    <img class="image-top" src="js.png" alt="">
-                    <div class="vertical-title">
-                        JAVA SCRIPT
-                    </div>
-
+                <div class="skill-card">
+                    <img src="js.png" alt="JavaScript">
+                    <h3>JavaScript</h3>
                 </div>
-
-
             </div>
-
         </section>
-
-        
-
 
         <section class="secondsection">
-
-            <h1>projects</h1>
-
-            <div class="box">
-                <div class="vertical">
-                    <img class="image-top" src="developer.png" alt="">
-                    <div class="vertical-title">
-                        TO-DO Application
+            <h1>PROJECTS</h1>
+            <div class="projects-container">
+                <div class="project-card">
+                    <img src="developer.png" alt="TO-DO Application">
+                    <h3>TO-DO Application</h3>
+                    <p>A simple and efficient task management application built with HTML, CSS, and JavaScript.</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">View Project</a>
+                        <a href="#" target="_blank">GitHub</a>
                     </div>
-
                 </div>
-                <div class="vertical">
-                    <img class="image-top" src="developer.png" alt="">
-                    <div class="vertical-title">
-                        Personal-portfolio
+                <div class="project-card">
+                    <img src="developer.png" alt="Personal Portfolio">
+                    <h3>Personal Portfolio</h3>
+                    <p>A responsive portfolio website showcasing my skills and projects.</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">View Project</a>
+                        <a href="#" target="_blank">GitHub</a>
                     </div>
-
                 </div>
-                <div class="vertical">
-                    <img class="image-top" src="developer.png" alt="">
-                    <div class="vertical-title">
-                        upcoming
+                <div class="project-card">
+                    <img src="developer.png" alt="Upcoming Project">
+                    <h3>Upcoming Project</h3>
+                    <p>Stay tuned for my next exciting project!</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">Coming Soon</a>
                     </div>
-
                 </div>
             </div>
-
         </section>
-
     </main>
 
     <footer>
         <div class="footer">
-            <div class="footerfirst">
+            <div class="footer-first">
                 <h3>ovais's developer portfolio</h3>
             </div>
-            <div class="footersecond">
+            <div class="footer-second">
                 <ul>
-                    <li>home</li>
-                    <li>about</li>
-                    <li>services</li>
-                    <li>contact</li>
-
+                    <li><a href="/">home</a></li>
+                    <li><a href="/">about</a></li>
+                    <li><a href="/">services</a></li>
+                    <li><a href="/">contact</a></li>
                 </ul>
             </div>
-            
-            
-
         </div>
         <div class="text-right">
             &#169; all rights reserved
         </div>
-
     </footer>
 
 
